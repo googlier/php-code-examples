@@ -1,0 +1,8 @@
+Creating new account with initial balance: 100
+Depositing 50 into account
+Withdrawing 30 from account
+Getting balance of account
+Creating new account with initial balance: 100
+Depositing 50 into account
+Withdrawing 30 from account
+Getting balance of account
