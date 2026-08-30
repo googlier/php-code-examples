@@ -1,0 +1,37 @@
+```php
+<?php
+
+// Random Problem: Implement a function to find the nth Fibonacci number using the Singleton Design Pattern
+
+class FibonacciSingleton {
+    private static $instance = null;
+    private $fibonacciNumbers = [];
+
+    private function __construct() {}
+
+    public static function getInstance() {
+        if (self::$instance == null) {
+            self::$instance = new FibonacciSingleton();
+        }
+        return self::$instance;
+    }
+
+    public function getFibonacci($n) {
+        if (!isset($this->fibonacciNumbers[$n])) {
+            if ($n <= 1) {
+                $this->fibonacciNumbers[$n] = $n;
+            } else {
+                $this->fibonacciNumbers[$n] = $this->getFibonacci($n - 1) + $this->getFibonacci($n - 2);
+            }
+        }
+        return $this->fibonacciNumbers[$n];
+    }
+}
+
+// Usage
+$n = 10;
+$fibonacci = FibonacciSingleton::getInstance()->getFibonacci($n);
+echo "The $n-th Fibonacci number is: $fibonacci\n";
+
+?>
+```
