@@ -1,0 +1,41 @@
+```php
+<?php
+
+class Shape {
+    public function draw() {
+        echo "Drawing a shape\n";
+    }
+}
+
+class Circle extends Shape {
+    public function draw() {
+        echo "Drawing a circle\n";
+    }
+}
+
+class Square extends Shape {
+    public function draw() {
+        echo "Drawing a square\n";
+    }
+}
+
+class ShapeFactory {
+    public function getShape($shapeType) {
+        if ($shapeType == "CIRCLE") {
+            return new Circle();
+        } elseif ($shapeType == "SQUARE") {
+            return new Square();
+        }
+        return null;
+    }
+}
+
+$factory = new ShapeFactory();
+$shape1 = $factory->getShape("CIRCLE");
+$shape1->draw();
+
+$shape2 = $factory->getShape("SQUARE");
+$shape2->draw();
+
+?>
+```
